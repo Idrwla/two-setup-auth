@@ -1,0 +1,43 @@
+<form [formGroup]="userForSingUp">
+  <h2>Регистрация</h2>
+  <mat-form-field>
+    <mat-label>
+      Username
+    </mat-label>
+    <input matInput formControlName="username">
+    <mat-error *ngIf="userForSingUp.invalid && userForSingUp.controls.username.invalid">
+      Invalid username
+    </mat-error>
+  </mat-form-field><br>
+  <mat-form-field>
+    <mat-label>
+      E-mail address
+    </mat-label>
+    <input matInput formControlName="email">
+    <mat-error *ngIf="userForSingUp.invalid && userForSingUp.controls.email.invalid">
+      Invalid Email
+    </mat-error>
+  </mat-form-field><br>
+  <mat-form-field>
+    <mat-label>
+      Password
+    </mat-label>
+    <input matInput formControlName="pass">
+    <mat-error *ngIf="userForSingUp.invalid && userForSingUp.controls.pass.invalid">
+      Invalid password
+    </mat-error>
+  </mat-form-field><br>
+  <mat-form-field>
+    <mat-label>
+      Confirm your Password
+    </mat-label>
+    <input matInput formControlName="confPass">
+    <mat-error *ngIf="userForSingUp.invalid && userForSingUp.controls.confPass.invalid ||confPassCheck()">
+      Passwords Doesn't match
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary"
+          [disabled]="userForSingUp.invalid"
+  (click)="register()"
+  >Sing Up</button>
+</form>

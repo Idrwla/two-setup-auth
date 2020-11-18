@@ -1,0 +1,13 @@
+<div class="container">
+
+  <h2>Пройдите двухфакторную аутентификацию</h2>
+  <div>
+    <p>На ваш указанный E-mail адрес отправлено письмо с кодом<br>
+      пожалуйста введите код из письма</p>
+    <div class="codeVer">
+      <input matInput [(ngModel)]="code" placeholder="Код из письма"><br>
+      <button mat-raised-button color="primary" (click)="verify(code)">Подтвердить</button>
+      <p *ngIf="errormessage" >{{errormessage}}</p>
+    </div>
+  </div>
+</div>
